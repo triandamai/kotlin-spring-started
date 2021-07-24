@@ -1,332 +1,154 @@
-GET http://localhost:8080/user/14
-
-<> 2021-07-24T124154.200.json
+GET http://localhost:8080/hai
 
 ###
 
-GET http://localhost:8080/user/14
+GET http://localhost:8080/hai
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXRtYW4iLCJpYXQiOjE2MjcxMzUyNDksImV4cCI6MTYyNzEzNjE0OX0.2G33t5exOEb5yppzvxOZ5Io7lloluR2_rEHI55B_fUU
 
-<> 2021-07-24T124142.200.json
-
-###
-
-GET http://localhost:8080/user/15
-
-<> 2021-07-24T124127.404.json
+<> 2021-07-24T210526.200.json
 
 ###
 
-GET http://localhost:8080/user
-
-<> 2021-07-24T124121.404.json
-
-###
-
-DELETE http://localhost:8080/user/15
-
-<> 2021-07-24T123709.200.json
-
-###
-
-DELETE http://localhost:8080/user/15
-
-<> 2021-07-24T123649.405.json
-
-###
-
-PUT http://localhost:8080/user/14
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trian",
-  "lastName": "Damai"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T123644.200.json
+<> 2021-07-24T210523.200.json
 
 ###
 
-PUT http://localhost:8080/user/14
+GET http://localhost:8080/hai
+
+###
+
+GET http://localhost:8080/hai
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXRtYW4iLCJpYXQiOjE2MjcxMzUyNDksImV4cCI6MTYyNzEzNjE0OX0.2G33t5exOEb5yppzvxOZ5Io7lloluR2_rEHI55B_fUU
+
+<> 2021-07-24T210133.200.json
+
+###
+
+GET http://localhost:8080/hai
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXRtYW4iLCJpYXQiOjE2MjcxMzUyNDksImV4cCI6MTYyNzEzNjE0OX0.2G33t5exOEb5yppzvxOZ5Io7lloluR2_rEHI55B_fUU
+
+<> 2021-07-24T210101.200.txt
+
+###
+
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trians",
-  "lastName": "Damais"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T123215.200.json
+<> 2021-07-24T210049.200.json
 
 ###
 
-PUT http://localhost:8080/user/14
+GET http://localhost:8080/hai
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXRtYW4iLCJpYXQiOjE2MjcxMzI5MjksImV4cCI6MTYyNzEzMzgyOX0.ObFilPKCmNXCbe3sAQ8tVe_PnPJ1zquBY00QkR2VTl4
+
+###
+
+GET http://localhost:8080/hai
+
+###
+
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trians",
-  "lastName": "Damais"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T123018.200.json
+<> 2021-07-24T202209.200.json
 
 ###
 
-PUT http://localhost:8080/user/14
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trians",
-  "lastname": "Damais"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T123006.400.json
+<> 2021-07-24T201640.200.json
 
 ###
 
-GET http://localhost:8080/user/14
-
-<> 2021-07-24T121829.200.json
-
-###
-
-GET http://localhost:8080/user/14
-
-<> 2021-07-24T121631.200.txt
-
-###
-
-POST http://localhost:8080/user/add
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trian",
-  "lastName": "Damai"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T121520.200.json
+<> 2021-07-24T201540.200.json
 
 ###
 
-POST http://localhost:8080/user/add
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trian",
-  "lastName": "Damai"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T121243.500.json
+<> 2021-07-24T200037.200.json
 
 ###
 
-POST http://localhost:8080/user/add
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+{
+  "username": "batman",
+  "password": "password"
+}
+
+<> 2021-07-24T200028.415.json
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+{
+  "username": "batman",
+  "password": "password"
+}
+
+<> 2021-07-24T200006.500.json
+
+###
+
+POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "firstName": "Trian",
-  "lastName": "Damai"
+  "username": "batman",
+  "password": "password"
 }
 
-<> 2021-07-24T121147.500.json
+<> 2021-07-24T195946.500.json
 
 ###
 
-POST http://localhost:8080/user/add
-Content-Type: application/json
-
-{
-  "firstName": "Trian",
-  "lastName": "Damai"
-}
-
-<> 2021-07-24T121117.200.json
+GET http://localhost:8080/hai%20-a%20user:19273f7b-5d45-4f75-8fe8-ddc45c3615ae
 
 ###
 
-POST http://localhost:8080/user/add
-Content-Type: application/json
-
-{
-  "firstName": "Trian",
-  "lastName": "Damai"
-}
-
-<> 2021-07-24T121037.200.json
-
-###
-
-POST http://localhost:8080/user/add
-Content-Type: application/json
-
-{
-  "firstName": "Trian",
-  "lastName": "Damai"
-}
-
-<> 2021-07-24T120656.500.json
-
-###
-
-POST http://localhost:8080/user/add
-Content-Type: application/json
-
-{
-  "firstName": "Trian",
-  "lastName": "Damai"
-}
-
-<> 2021-07-24T120617.500.json
-
-###
-
-POST http://localhost:8080/user/add
-Content-Type: application/json
-
-{
-  "firstName": "Trian",
-  "lastName": "Damai"
-}
-
-<> 2021-07-24T120540.500.json
-
-###
-
-POST http://localhost:8080/user/add
-Content-Type: application/json
-
-{
-  "firstName": "Trian",
-  "lastName": "Damai"
-}
-
-<> 2021-07-24T120422.500.json
-
-###
-
-POST http://localhost:8080/user/add
-
-<> 2021-07-24T120123.400.json
-
-###
-
-GET http://localhost:8080/user/1
-
-<> 2021-07-24T115845.200.txt
-
-###
-
-GET http://localhost:8080/user
-
-<> 2021-07-24T115813.200.json
-
-###
-
-GET http://localhost:8080/user/1
-
-<> 2021-07-24T113940.200.json
-
-###
-
-GET http://localhost:8080/user/1
-
-<> 2021-07-24T113010.500.json
-
-###
-
-GET http://localhost:8080/user/1
-
-<> 2021-07-24T112934.200.json
-
-###
-
-GET http://localhost:8080/1
-
-<> 2021-07-24T112847.404.json
-
-###
-
-GET http://localhost:8080/user
-
-<> 2021-07-24T112843.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2021-07-24T112218.200.json
-
-###
-
-POST http://localhost:8080/add
-Content-Type: application/json
-firstname="ssasa":
-
-<> 2021-07-24T104357.400.html
-
-###
-
-POST http://localhost:8080/add
-
-<> 2021-07-24T103551.200.txt
-
-###
-
-POST http://localhost:8080/add
-
-<> 2021-07-24T103541.200.txt
-
-###
-
-POST http://localhost:8080/add
-
-<> 2021-07-24T103528.200.txt
-
-###
-
-POST http://localhost:8080/add
-
-<> 2021-07-24T103210.200.txt
-
-###
-
-GET http://localhost:8080
-
-<> 2021-07-24T103205.200.json
-
-###
-
-GET http://localhost:8080/1
-
-<> 2021-07-24T103159.200.json
-
-###
-
-GET http://localhost:8080/1
-
-<> 2021-07-24T053703.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2021-07-24T053340.200.json
-
-###
-
-POST http://localhost:8080/add
-
-<> 2021-07-24T053332.200.txt
-
-###
-
-GET http://localhost:8080
-
-###
-
-GET http://localhost:8080
-
-###
-
-GET http://localhost:8080
+GET http://localhost:8080/hai
 
 ###
 

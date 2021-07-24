@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
+
 /**
  * Created by triandamai on 24/07/2021
  *
@@ -53,14 +54,20 @@ class UserService {
     fun editUser(id:Long,usersEntity: UsersEntity):ResponseEntity<Any?> {
         return if(userRepository.existsById(id)){
             ResponseEntity(userRepository.save(
-                UsersEntity(idUser = id,firstName = usersEntity.firstName,lastName = usersEntity.lastName)
+                usersEntity
             ),HttpStatus.OK)
         }else  ResponseEntity("not found",HttpStatus.NOT_FOUND)
     }
-
+/**
+ *
+ * **/
     fun deleteUser(id:Long):ResponseEntity<Any?>{
         return if(userRepository.existsById(id)){
             ResponseEntity(userRepository.deleteById(id),HttpStatus.OK)
         }else ResponseEntity("user doesn't exist !!",HttpStatus.NOT_FOUND)
     }
+    /**
+     *
+     * **/
+
 }

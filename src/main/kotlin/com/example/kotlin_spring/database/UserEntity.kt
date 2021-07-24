@@ -1,13 +1,10 @@
 package com.example.kotlin_spring.database
 
 import org.springframework.lang.Nullable
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import java.lang.reflect.Constructor
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.validation.constraints.Max
-import javax.validation.constraints.Min
+import javax.persistence.*
+
 
 /**
  * Created by triandamai on 24/07/2021
@@ -15,14 +12,17 @@ import javax.validation.constraints.Min
  **/
 
 @Entity(name = "users")
-data class UsersEntity(
+ class UsersEntity(){
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Nullable
-    val idUser:Long?,
-    val firstName:String,
-    val lastName:String,
-){
-constructor() : this(0,"","")
-constructor(firstName: String,lastName: String) : this(idUser = null,firstName=firstName,lastName=lastName)
+    var idUser:Long? = null
+    var firstName:String=""
+    var lastName:String=""
+    var email:String=""
+    var userName:String=""
+    var password:String =""
+    @Nullable
+    var token:String?=""
+
 }

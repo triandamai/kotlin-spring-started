@@ -1,15 +1,22 @@
 package com.example.kotlin_spring.controller
 
 
-import com.example.kotlin_spring.database.UsersEntity
-import com.example.kotlin_spring.repository.UserRepository
+
+import com.example.kotlin_spring.security.JwtSupport
 import com.example.kotlin_spring.service.UserService
+import kotlinx.coroutines.reactor.awaitSingleOrNull
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
-import org.springframework.http.MediaType
+import org.springframework.security.core.annotation.AuthenticationPrincipal
+import org.springframework.security.core.userdetails.ReactiveUserDetailsService
+import org.springframework.security.crypto.password.PasswordEncoder
+
+
 import org.springframework.web.bind.annotation.*
-import javax.validation.Valid
+import org.springframework.web.server.ResponseStatusException
+import java.nio.file.attribute.UserPrincipal
+import java.security.Principal
+
 
 /**
  * Created by triandamai on 24/07/2021
@@ -17,23 +24,30 @@ import javax.validation.Valid
  **/
 @CrossOrigin(maxAge = 3600)
 @RestController
-class UserController {
+class UserController(
+    private val encoder: PasswordEncoder,
+    private val users:ReactiveUserDetailsService,
+    private val jwtSupport: JwtSupport
+    ) {
     @Autowired
     lateinit var userService:UserService
 
-    @GetMapping("/user")
-    fun index(): ResponseEntity<Any?> = userService.getAllUsers()
+    @PostMapping("/login")
+    suspend fun login(@RequestBody login:Login):Any{
+        val user = users.findByUsername(login.username).awaitSingleOrNull()
 
-    @GetMapping("/user/{id}")
-    fun findById(@PathVariable id:Long):ResponseEntity<Any?> = userService.getUserById(id)
+        user?.let {
+            if(encoder.matches(login.password,it.password)){
+                return jwtSupport.generate(it.username).value
+            }
+        }
+        throw ResponseStatusException(HttpStatus.UNAUTHORIZED)
+    }
 
-    @PostMapping("/user/add")
-    fun addUser(@Valid @RequestBody user: UsersEntity):ResponseEntity<Any?> = userService.addNewUser(user)
-
-    @PutMapping("/user/{id}")
-    fun updateuser(@PathVariable("id") idUser:Long,@RequestBody user: UsersEntity):ResponseEntity<Any?> = userService.editUser(idUser,user)
-
-    @DeleteMapping("/user/{id}")
-    fun deleteUser(@PathVariable("id") idUser:Long):ResponseEntity<Any?> = userService.deleteUser(idUser)
-
+    @GetMapping("/hai")
+    suspend fun hai(@AuthenticationPrincipal principal: Principal):Principal{
+        return principal
+    }
 }
+
+data class Login(val username:String,val password:String)
